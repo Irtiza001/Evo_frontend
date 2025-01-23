@@ -1,0 +1,37 @@
+
+.nav-item {
+    color: white;
+    position: relative;
+    margin: 0 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    list-style: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    font-family:'"Roboto", "Helvetica", "Arial", sans-serif';
+  }
+  
+  .nav-item:hover {
+    color: white; /* Optional: Change text color on hover */
+  }
+  
+  /* Line effect on hover */
+  .nav-item::after {
+    content: "";
+    position: absolute;
+    bottom: -4px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background-color: white;
+    transition: width 0.3s ease;
+  }
+  
+  .nav-item:hover::after {
+    width: 100%;
+  }
+  
+  .nav-item.active::after {
+    width: 100%;
+    background-color: white;
+  }

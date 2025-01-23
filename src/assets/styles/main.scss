@@ -1,0 +1,14 @@
+@use "./gernal.scss";
+@use "./home.scss";
+@use "./about.scss";
+@use "./coverage.scss";
+@use "./contact.scss";
+
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import "slick-carousel/slick/slick.css";
+@import "slick-carousel/slick/slick-theme.css";
+

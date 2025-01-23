@@ -1,0 +1,485 @@
+.home {
+  position: relative;
+  font-family:'"Roboto", "Helvetica", "Arial", sans-serif';
+  
+//   .nav-section {
+//     position: relative;
+//     height: 36rem;
+//     background-image: url("/images/home/homepageimg.png");
+//     background-position: top center;
+//     background-size: cover; /* Ensures the image covers the entire container */
+//     background-repeat: no-repeat;
+//     overflow: hidden; /* Prevents overflow during animation */
+//     animation: zoomBackground 4s ease-in-out forwards; /* Zoom animation for effect */
+
+//     /* Dark overlay for better readability */
+//     &::before {
+//         content: "";
+//         position: absolute;
+//         top: 0;
+//         left: 0;
+//         width: 100%;
+//         height: 100%;
+//         background-color: rgba(0, 0, 0, 0.5); /* Adds semi-transparent overlay */
+//         z-index: 1; /* Ensures it overlays the background image but remains behind content */
+//     }
+// }
+
+  /* Keyframes for the one-time background zoom */
+  @keyframes zoomBackground {
+    0% {
+      background-size: 110%; /* Normal size */
+    }
+    100% {
+      background-size: 100%; /* Fully zoomed in */
+    }
+  }
+
+  /* Ensure content is above the overlay */
+  .nav-section > * {
+    position: relative;
+    z-index: 2; /* Ensure text is on top of the overlay */
+  }
+
+  .nav-item {
+    color: white;
+    position: relative;
+    margin: 0 1rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    list-style: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+  }
+
+  .nav-item:hover {
+    color: #ddd; /* Optional: Change text color on hover */
+  }
+
+  /* Line effect on hover */
+  .nav-item::after {
+    content: "";
+    position: absolute;
+    bottom: -0.25rem;
+    left: 0;
+    width: 0;
+    height: 0.188rem;
+    background-color: #54ACDF;
+    transition: width 0.3s ease;
+  }
+
+  .nav-item:hover::after {
+    width: 100%;
+  }
+
+  .nav-item.active::after {
+    width: 100%;
+    background-color: #54ACDF;
+  }
+  .marquee-container {
+    width: 100%;
+    overflow: hidden;
+    // overflow: visible;
+
+    white-space: nowrap;
+    position: relative;
+    // background: #f0f0f0;
+    // border: 1px solid #ccc;
+    padding: 30px 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .marquee {
+    display: flex;
+    animation: marquee 20s linear infinite;
+    // animation-duration: 45s;
+  }
+  .marquee_text {
+    margin: 0 20px;
+    font-size: 70px;
+    font-weight: bold;
+    color: #54ACDF;
+    white-space: nowrap;
+  }
+  .css-wtvtb3{
+    background-color: white;
+  }
+  .line-before {
+    position: relative;
+    padding-left: 40px; /* Adjust based on the desired space between line and text */
+    display: inline-block;
+    // font-family: 'Open Sans';
+    font-size: 14px;
+    color: #54ACDF;
+    font-weight: 600;
+  }
+  
+  .line-before::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 50%;
+    width: 30px; /* Length of the line */
+    height: 2px; /* Thickness of the line */
+    background-color: #54ACDF; /* Color of the line */
+    transform: translateY(-50%); /* Centers the line vertically with the text */
+  }
+  .main_services{
+    // padding-bottom: 50px;
+     margin-bottom: 50px;
+    // display: flex;
+   
+    padding: 0px 200px;
+  }
+  .serv_sub_content{
+    line-height: 46px;
+    padding-top: 20px;
+    text-transform: capitalize;
+    color: #000;
+    font-weight: bold;
+    font-size: 48px;
+
+  }
+  .service_card{
+    border-radius: 14px;
+  }
+  
+  
+ 
+  
+
+  /* Keyframes for the image animation (move from bottom to top) */
+  // @keyframes moveImageUp {
+    // 0% {
+      //transform: translateY(200px); /* Start 200px below */
+      //opacity: 0; /* Start with opacity 0 */
+   // }
+    //100% {
+    //  transform: translateY(0); /* End at normal position */
+     // opacity: 1; /* End with full opacity */
+   // }
+  // }
+
+  /* Keyframes for the text animation (fade-in and move slightly up) */
+  // @keyframes fadeInUp {
+    // 0% {
+      // opacity: 0;
+      // transform: translateY(30px); /* Start a little below */
+    // }
+    // 100% {
+      // opacity: 1;
+      // transform: translateY(0); /* End at normal position */
+    // }
+  // }
+
+  /* Keyframes for the button flip animation */
+  // @keyframes flipButton {
+    // 0% {
+      // transform: rotateY(180deg); /* Start flipped */
+      // opacity: 0;
+    // }
+    // 100% {
+      // transform: rotateY(0deg); /* End flipped correctly */
+      // opacity: 1;
+    // }
+  // }
+  /* Add animation classes */
+.trigger {
+  opacity: 0;
+  transition: opacity 1s ease-out;
+}
+
+.trigger.animate {
+  opacity: 1;
+}
+
+.image-animation {
+  animation: moveImageUp 1.5s ease-out forwards;
+}
+
+.text-animation {
+  animation: fadeInUp 1.5s ease-out 0.5s forwards;
+}
+
+.button-animation {
+  animation: flipButton 1s ease-out 1s forwards;
+}
+
+/* Keyframes for the image animation */
+// @keyframes moveImageUp {
+//   0% {
+//     transform: translateY(200px);
+//     opacity: 0;
+//   }
+//   100% {
+//     transform: translateY(0);
+//     opacity: 1;
+//   }
+// }
+
+/* Keyframes for the text animation */
+// @keyframes fadeInUp {
+//   0% {
+//     opacity: 0;
+//     transform: translateY(30px);
+//   }
+//   100% {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+/* Keyframes for the button flip animation */
+// @keyframes flipButton {
+//   0% {
+//     transform: rotateY(180deg);
+//     opacity: 0;
+//   }
+//   100% {
+//     transform: rotateY(0deg);
+//     opacity: 1;
+//   }
+// }
+
+
+  /* Apply animation to image */
+  .image-animation {
+    animation: moveImageUp 1.5s ease-out forwards;
+    opacity: 1;
+  }
+
+  /* Apply animation to text */
+  .text-animation {
+    animation: fadeInUp 1.5s ease-out 0.5s forwards; /* Delay for smooth transition */
+  }
+
+  /* Apply animation to button */
+  .button-animation {
+    animation: flipButton 1s ease-out 1s forwards;
+    transform-origin: center; /* Ensure flip happens at the center */
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+  .why_choose_section{
+    background-image: url('/images/home/choose_us_img5.png');
+    height: 450px;
+    background-position: center center;
+    background-size: cover; /* Improved responsiveness */
+    background-repeat: no-repeat;
+    overflow: hidden;
+    text-align: center;
+  }
+  .contact_form{
+    padding: 20px;
+    background-color: #54ACDF;
+    // background-color: linear-gradient(45deg, #54ACDF, #7BC3E2);  
+  }
+  .choose_line {
+    display: block;
+    text-align: center;
+    height: 2px; /* Line thickness */
+    background-color: white; /* Line color */
+    width: 20px; /* Line width */
+    margin: 20px 0; /* Optional spacing around the line */
+  }
+  .bottom_image_box {
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center; /* Centers content vertically */
+    background-image: url("/images/home/Group-41399.png");
+    height: 300px;
+    position: absolute;
+    // bottom: -220px;
+    width: 80%;
+    background-size: cover; /* Ensures the image fills the box */
+    background-position: center; /* Centers the image */
+    left: 50%; /* Moves the box to the horizontal center */
+    transform: translateX(-50%); /* Adjusts for the box's own width */
+  }
+  
+  .project_user{
+    font-weight: bold;
+    text-align: center;
+    color: #fff;
+    font-size: 27px;
+  }
+
+  .whatsappicon{
+    position: fixed;
+    bottom: 5px;
+    right: 3%;
+    z-index: 1000;
+  }
+  // @media screen and (max-width: 600px){
+  //         .choose_section_text1{
+  //           font-size: 1.3rem;
+  //           padding-top: 2px;
+  //           line-height:35px;
+
+  //         }
+          
+    
+
+  // }
+  @media screen and (max-width: 768px) {
+    .nav-section{
+      // 
+      height: 100%;
+      width: 100%;
+    }
+    .second_section_text3{
+      margin-bottom: 10px !important;
+    }
+    .nav_content{
+      padding: 10px 10px;
+    }
+    .nav_content .above_content{
+      font-size: 10px;
+      letter-spacing: 1px;
+    }
+    .nav_content .above_content::before{
+      width: 20px;
+      padding-left: 40px,
+    }
+    .nav_content .center_content{
+      font-size: 1.5rem;
+      line-height: 1.8rem;
+    }
+    .nav_content .contact_btn {
+      padding: 10px 10px;
+      font-size: 11px;
+    }
+
+    .nav-section {
+      // height: 400px; /* Further reduce height for mobile devices */
+      background-position: top center;
+  }
+  .main_service_content{
+    padding-left: 22px;
+  }
+  .main_services{
+    padding: 0px 12px !important;
+  }
+  .second_section{
+    padding: 10px;
+  }
+  .bottom_box_img_text{
+    font-size: 1.5rem;
+  }
+  .faq_section{
+    text-align: center;
+    padding: 0px 5px;
+    width: 100%;
+    
+  }
+  .choose_section_body{
+    padding: 3px 20px;
+  }
+  .faq_section_title{
+    margin-top: 220px;
+    padding: 10px;
+  }
+  .bottom_image_box{
+    height: 120px;
+    margin-top: 5px;
+  }
+  .choose_section_text1{
+    
+    font-size: 1.4rem;
+    padding-top: 4px;
+    line-height: 40px;
+  }
+  .contact_form{
+    margin-top: 40px;
+  }
+  .choose_section_text0{
+    padding-top: 15px;
+  }
+  .second_section_text2{
+    font-size: 1.5rem;
+  }
+  .marquee-container .marquee .marquee_text{
+    font-size: 40px;
+  }
+  .serv_sub_content{
+    line-height: 30px;
+    font-size: 1.5rem;
+  }
+  //   .logo_img img{
+  //     width: 12rem;
+  // }
+ 
+.main_services{
+  padding-left: "35px";
+  padding: 0px;
+  // margin-left: auto; margin-right: auto;
+  // padding-left: auto;
+  // padding-right: auto;
+
+  // width: 100%;
+  text-align: center;
+}
+
+  }
+  @media screen and (max-width:991px){
+    .nav-section{
+      // 
+      background-position: top center;
+
+      height: 100%;
+      width: 100%;
+    }
+    .nav_content{
+      padding: 10px 49px;
+    }
+    .center_content{
+      font-size: 35px;
+    }
+    .second_section_text3{
+      margin-bottom: 10px;
+      
+    }
+  //   .logo_img img{
+  //     width: 14rem;
+  // }
+  .second_section{
+    padding: 25px;
+  }
+  .second_section_text2{
+    font-size: 2rem;
+  }
+  .main_services{
+    // padding: 0px 100px;
+  }
+  .serv_sub_content{
+    font-size: 2rem;
+  }
+  .bottom_image_box{
+    margin-top: 5px;
+    height: 250px;
+  }
+  .choose_section_text1{
+    font-size:1.6rem ;
+    line-height: 25px;
+    padding-top: 16px;
+  }
+  .choose_section_text0{
+    padding-top: 14px;
+  }
+  .faq_section{
+    padding: 25px;
+  }
+  
+  }
+  
+}
+

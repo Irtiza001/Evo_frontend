@@ -1,0 +1,66 @@
+body{
+   font-family:'"Roboto", "Helvetica", "Arial", sans-serif';
+  
+}
+
+.coverage-section {
+  position: relative;
+  height: 350px;
+  background-image: url("/images/home/coverage_img.jpg");
+  background-position: top center;
+  background-size: cover; /* Ensures the image covers the entire container */
+  background-repeat: no-repeat;
+  overflow: hidden; /* Prevents overflow during animation */
+  animation: zoomBackground 4s ease-in-out forwards; /* Zoom animation for effect */
+  font-family:'"Roboto", "Helvetica", "Arial", sans-serif';
+}
+
+.nav-section > * {
+  position: relative;
+  z-index: 2; /* Ensure text is on top of the overlay */
+}
+
+@media screen and (max-width: 768px) {
+  .coverage-section {
+      height: 200px;
+  }
+  .logo_img img {
+      width: 14rem; /* Fixed the missing colon here */
+  }
+}
+
+.nav-item {
+  color: white;
+  position: relative;
+  margin: 0 1rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  list-style: none;
+  cursor: pointer;
+  transition: color 0.3s ease;
+}
+
+.nav-item:hover {
+  color: #ddd; /* Optional: Change text color on hover */
+}
+
+/* Line effect on hover */
+.nav-item::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background-color: #54ACDF;
+  transition: width 0.3s ease;
+}
+
+.nav-item:hover::after {
+  width: 100%;
+}
+
+.nav-item.active::after {
+  width: 100%;
+  background-color: #54ACDF;
+}
